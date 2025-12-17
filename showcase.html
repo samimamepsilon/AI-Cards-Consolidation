@@ -5,60 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Card Showcase - All Cards</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      .nav-bar {
-        background: #fff;
-        border-bottom: 1px solid #e6e6e6;
-        padding: 16px 24px;
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      }
-
-      .nav-button {
-        padding: 8px 16px;
-        border: 1px solid #ccc;
-        background: #fff;
-        color: #1a1a1a;
-        border-radius: 4px;
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.2s;
-        font-family: 'Source Sans 3', sans-serif;
-      }
-
-      .nav-button:hover {
-        background: #f0f6ff;
-        border-color: #0063e6;
-        color: #0063e6;
-      }
-
-      .nav-button.active {
-        background: #0063e6;
-        color: #fff;
-        border-color: #0063e6;
-      }
-
-      .nav-button.active:hover {
-        background: #0052cc;
-        border-color: #0052cc;
-      }
-
-      body {
-        padding-top: 0;
-      }
-    </style>
   </head>
   <body>
     <nav class="nav-bar">
       <a href="index.html" class="nav-button">Home</a>
       <a href="z-demo.html" class="nav-button">Interactive Demo</a>
       <a href="showcase.html" class="nav-button active">All Cards</a>
+      <a href="canvas.html" class="nav-button">Canvas</a>
+      <a href="card-playground.html" class="nav-button">Card Playground</a>
     </nav>
     <div class="container">
       <div class="card1">
@@ -74,23 +28,41 @@
         <div class="card2-body">
           <p class="big-number">41,052</p>
           <div class="icon-text-grp">
-            <svg class="sort-up-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 557.14 1792">
-              <path d="M46.43,1058.5H510.71a46.43,46.43,0,0,0,32.83-79.26L311.4,747.1a46.42,46.42,0,0,0-65.65,0L13.6,979.24a46.43,46.43,0,0,0,32.83,79.26Z" />
+            <svg
+              class="sort-up-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 557.14 1792"
+            >
+              <path
+                d="M46.43,1058.5H510.71a46.43,46.43,0,0,0,32.83-79.26L311.4,747.1a46.42,46.42,0,0,0-65.65,0L13.6,979.24a46.43,46.43,0,0,0,32.83,79.26Z"
+              />
             </svg>
             <p>2.4%</p>
           </div>
           <div class="badge-grp">
             <div class="text-badge">71.398 Unique Clicks</div>
             <div class="icon-text-badge">
-              <svg class="sort-up-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 557.14 1792">
-                <path d="M46.43,1058.5H510.71a46.43,46.43,0,0,0,32.83-79.26L311.4,747.1a46.42,46.42,0,0,0-65.65,0L13.6,979.24a46.43,46.43,0,0,0,32.83,79.26Z" />
+              <svg
+                class="sort-up-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 557.14 1792"
+              >
+                <path
+                  d="M46.43,1058.5H510.71a46.43,46.43,0,0,0,32.83-79.26L311.4,747.1a46.42,46.42,0,0,0-65.65,0L13.6,979.24a46.43,46.43,0,0,0,32.83,79.26Z"
+                />
               </svg>
               <p>2.2%</p>
             </div>
             <div class="text-badge">71.398 People Who Clicked</div>
             <div class="icon-text-badge">
-              <svg class="sort-up-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 557.14 1792">
-                <path d="M46.43,1058.5H510.71a46.43,46.43,0,0,0,32.83-79.26L311.4,747.1a46.42,46.42,0,0,0-65.65,0L13.6,979.24a46.43,46.43,0,0,0,32.83,79.26Z" />
+              <svg
+                class="sort-up-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 557.14 1792"
+              >
+                <path
+                  d="M46.43,1058.5H510.71a46.43,46.43,0,0,0,32.83-79.26L311.4,747.1a46.42,46.42,0,0,0-65.65,0L13.6,979.24a46.43,46.43,0,0,0,32.83,79.26Z"
+                />
               </svg>
               <p>2.2%</p>
             </div>
@@ -106,7 +78,7 @@
             <div class="blue-badge">10 roles assigned</div>
           </div>
           <div class="info-text-grp">
-            <p class="user-id">loginusername   |   ID 1234567890</p>
+            <p class="user-id">loginusername | ID 1234567890</p>
             <p class="updated">Updated xx/xx/xxxx</p>
           </div>
         </div>
@@ -137,27 +109,39 @@
         <div class="c5-body">
           <div class="text-badge-row">
             <p>Attempted</p>
-            <div class="secondary-badge">10,000 | <span class="italic-text"> 80% </span></div>
+            <div class="secondary-badge">
+              10,000 | <span class="italic-text"> 80% </span>
+            </div>
           </div>
           <div class="text-badge-row">
             <p>Delivered</p>
-            <div class="secondary-badge">8,000 | <span class="italic-text"> 80% </span></div>
+            <div class="secondary-badge">
+              8,000 | <span class="italic-text"> 80% </span>
+            </div>
           </div>
           <div class="text-badge-row">
             <p>Opened</p>
-            <div class="secondary-badge">8,000 | <span class="italic-text"> 80% </span></div>
+            <div class="secondary-badge">
+              8,000 | <span class="italic-text"> 80% </span>
+            </div>
           </div>
           <div class="text-badge-row">
             <p>Clicked</p>
-            <div class="secondary-badge">8,000 | <span class="italic-text"> 80% </span></div>
+            <div class="secondary-badge">
+              8,000 | <span class="italic-text"> 80% </span>
+            </div>
           </div>
           <div class="text-badge-row">
             <p>Unsubscribed</p>
-            <div class="secondary-badge">8,000 | <span class="italic-text"> 80% </span></div>
+            <div class="secondary-badge">
+              8,000 | <span class="italic-text"> 80% </span>
+            </div>
           </div>
           <div class="text-badge-row">
             <p>Purchased</p>
-            <div class="secondary-badge">8,000 | <span class="italic-text"> 80% </span></div>
+            <div class="secondary-badge">
+              8,000 | <span class="italic-text"> 80% </span>
+            </div>
           </div>
           <div class="text-badge-row tbr-bold">
             <p>Revenue</p>
@@ -192,7 +176,10 @@
             <div class="body-bucket-icon"></div>
             <p class="body-bucket-text">
               Address
-              <span class="bbt-secondary"><br />123 ABC Street <br />Unit 109 <br />Chicago, IL 60606 <br />United States</span>
+              <span class="bbt-secondary"
+                ><br />123 ABC Street <br />Unit 109 <br />Chicago, IL 60606
+                <br />United States</span
+              >
             </p>
           </div>
           <div class="body-bucket">
@@ -227,7 +214,11 @@
               <p class="c7-header-text">Jon Doe</p>
             </div>
             <button class="more-button">
-              <svg class="more-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 1792">
+              <svg
+                class="more-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 220 1792"
+              >
                 <circle cx="110" cy="456" r="110" />
                 <circle cx="110" cy="896" r="110" />
                 <circle cx="110" cy="1336" r="110" />
@@ -273,7 +264,9 @@
           </div>
           <div class="c7-body-row">
             <p class="c7-body-row-left">
-              <span class="c7-body-row-left-title">Moble In-App Push 2 of 2</span><br />
+              <span class="c7-body-row-left-title"
+                >Moble In-App Push 2 of 2</span
+              ><br />
               Value
             </p>
           </div>
@@ -292,7 +285,8 @@
         <div class="c8-icon"></div>
         <div class="c8-title">Customer Engagement Score</div>
         <div class="c8-body">
-          Examines consumer engagement across multiple touchpoints to distinguish highly engaged customers from those with low engagement.
+          Examines consumer engagement across multiple touchpoints to
+          distinguish highly engaged customers from those with low engagement.
         </div>
         <button class="secondary-button">Select</button>
       </div>
@@ -321,18 +315,33 @@
           </div>
         </div>
         <div class="c9-footer">
-          <button class="c9-footer-button"><span class="c9-button-icon"></span></button>
-          <button class="c9-footer-button"><span class="c9-button-icon"></span></button>
-          <button class="c9-footer-button"><span class="c9-button-icon"></span></button>
+          <button class="c9-footer-button">
+            <span class="c9-button-icon"></span>
+          </button>
+          <button class="c9-footer-button">
+            <span class="c9-button-icon"></span>
+          </button>
+          <button class="c9-footer-button">
+            <span class="c9-button-icon"></span>
+          </button>
         </div>
       </div>
 
       <div class="card10">
         <p class="c10-title">Campaign Flow Summary</p>
         <ul class="c10-list">
-          <li>Send an email to cart abandonment leads the day after cart was abandoned.</li>
-          <li>Send a follow-up email on day two unless the customer makes a purchase.</li>
-          <li>Send another follow-up email on day three unless the customer makes a purchase.</li>
+          <li>
+            Send an email to cart abandonment leads the day after cart was
+            abandoned.
+          </li>
+          <li>
+            Send a follow-up email on day two unless the customer makes a
+            purchase.
+          </li>
+          <li>
+            Send another follow-up email on day three unless the customer makes
+            a purchase.
+          </li>
         </ul>
       </div>
 
@@ -340,7 +349,9 @@
         <div class="c11-icon-text-group">
           <div class="c11-icon"></div>
           <div class="c11-text-group">
-            <p class="c11-text-group-title">Count (all profiles deduped by email address)</p>
+            <p class="c11-text-group-title">
+              Count (all profiles deduped by email address)
+            </p>
             <p class="c11-text-group-count">5,000</p>
           </div>
         </div>
@@ -400,8 +411,14 @@
         <div class="c14-body">
           <p class="c14-body-title">18%</p>
           <div class="icon-text-grp icg-v2">
-            <svg class="sort-down-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 557.14 1792">
-              <path d="M46.43,1058.5H510.71a46.43,46.43,0,0,0,32.83-79.26L311.4,747.1a46.42,46.42,0,0,0-65.65,0L13.6,979.24a46.43,46.43,0,0,0,32.83,79.26Z" />
+            <svg
+              class="sort-down-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 557.14 1792"
+            >
+              <path
+                d="M46.43,1058.5H510.71a46.43,46.43,0,0,0,32.83-79.26L311.4,747.1a46.42,46.42,0,0,0-65.65,0L13.6,979.24a46.43,46.43,0,0,0,32.83,79.26Z"
+              />
             </svg>
             <p>2.4%</p>
           </div>
@@ -413,8 +430,18 @@
                   <stop offset="100%" stop-color="#fff" stop-opacity="0" />
                 </linearGradient>
               </defs>
-              <path d="M0,40 L100,60 L200,80 L300,100 L400,130 L400,200 L0,200 Z" fill="url(#gradientFill)" />
-              <path d="M0,40 L100,60 L200,80 L300,100 L400,130" stroke="#e63946" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M0,40 L100,60 L200,80 L300,100 L400,130 L400,200 L0,200 Z"
+                fill="url(#gradientFill)"
+              />
+              <path
+                d="M0,40 L100,60 L200,80 L300,100 L400,130"
+                stroke="#e63946"
+                stroke-width="6"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </div>
         </div>
@@ -455,7 +482,9 @@
             </div>
           </div>
           <p class="c16-text">08/02/2024, 11:59 PM</p>
-          <button class="secondary-button" style="margin-top: 16px;">Create Custom Schedule</button>
+          <button class="secondary-button" style="margin-top: 16px">
+            Create Custom Schedule
+          </button>
         </div>
       </div>
 
@@ -491,32 +520,170 @@
       <div class="card19">
         <div class="c19-group">
           <p class="c19-label">Campaign Name</p>
-          <input class="input1" type="text" placeholder="Single Send Campaign 1">
+          <input
+            class="input1"
+            type="text"
+            placeholder="Single Send Campaign 1"
+          />
         </div>
         <div class="c19-group">
-          <p class="c19-label">Description <span style="color: #737373;">(optional)</span></p>
+          <p class="c19-label">
+            Description <span style="color: #737373">(optional)</span>
+          </p>
           <textarea class="textarea1" type="text"></textarea>
         </div>
         <div class="c19-group">
           <p class="c19-label">Choose an icon</p>
           <div class="c19-icon-btn-group">
-            <button class="c19-icon-btn"><div class="c19-icon-btn-icon"></div></button>
-            <button class="c19-icon-btn"><div class="c19-icon-btn-icon"></div></button>
-            <button class="c19-icon-btn"><div class="c19-icon-btn-icon"></div></button>
-            <button class="c19-icon-btn"><div class="c19-icon-btn-icon"></div></button>
-            <button class="c19-icon-btn"><div class="c19-icon-btn-icon"></div></button>
-            <button class="c19-icon-btn"><div class="c19-icon-btn-icon"></div></button>
-            <button class="c19-icon-btn"><div class="c19-icon-btn-icon"></div></button>
-            <button class="c19-icon-btn"><div class="c19-icon-btn-icon"></div></button>
+            <button class="c19-icon-btn">
+              <div class="c19-icon-btn-icon"></div>
+            </button>
+            <button class="c19-icon-btn">
+              <div class="c19-icon-btn-icon"></div>
+            </button>
+            <button class="c19-icon-btn">
+              <div class="c19-icon-btn-icon"></div>
+            </button>
+            <button class="c19-icon-btn">
+              <div class="c19-icon-btn-icon"></div>
+            </button>
+            <button class="c19-icon-btn">
+              <div class="c19-icon-btn-icon"></div>
+            </button>
+            <button class="c19-icon-btn">
+              <div class="c19-icon-btn-icon"></div>
+            </button>
+            <button class="c19-icon-btn">
+              <div class="c19-icon-btn-icon"></div>
+            </button>
+            <button class="c19-icon-btn">
+              <div class="c19-icon-btn-icon"></div>
+            </button>
           </div>
         </div>
         <div class="c19-group">
           <p class="c19-label">Tags</p>
-          <p class="c19-secondary-label">Tags allow you to group and organize your campaign data for reporting purposes.</p>
-          <input class="input1" type="text" placeholder="Add tags">
+          <p class="c19-secondary-label">
+            Tags allow you to group and organize your campaign data for
+            reporting purposes.
+          </p>
+          <input class="input1" type="text" placeholder="Add tags" />
         </div>
       </div>
+
+      <div class="card20">
+        <div class="c20-header">
+          <div class="c20-icon"></div>
+          <div class="c20-header-text-group">
+            <p class="c20-header-title"> Loyal Multi-Buyer </p>
+            <p class="c20-header-subtext">Lifecycle Stage</p>
+          </div>
+        </div>
+       
+
+        <p class="c20-footer">
+          From CLS on 07/08/2025 |
+          <span class="c20-footer-link"> View Model </span>
+        </p>
+      </div>
+
+      <div class="card21">
+        <div class="c21-header">
+          <div class="c21-header-group">
+            <div class="c21-icon"></div>
+            <p class="c21-header-text">Engagement Stage</p>
+          </div>
+
+          <div class="c21-footer">
+            From CLS on 07/08/2025
+            <span class="c20-footer-link"> View Model </span>
+          </div>
+        </div>
+        <div class="c21-body">
+          <p class="c21-body-title">Convert</p>
+          <div class="c21-subcard-group">
+            <div class="c21-subcard">
+              <div class="c21-title-text-group">
+                <p class="c21-subcard-title">Value</p>
+                <div class="progress-bar-text pbt-low">Low</div>
+              </div>
+              <div class="progress-bar-group">
+                <div class="progress-bar-container">
+                  <div class="progress-bar-filled"></div>
+                  <div class="progress-bar-empty"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="c21-subcard">
+              <div class="c21-title-text-group">
+                <p class="c21-subcard-title">Attrition</p>
+                <p class="progress-bar-text pbt-medium">Medium</p>
+              </div>
+              <div class="progress-bar-group">
+                <div class="progress-bar-container">
+                  <div class="progress-bar-filled pbf-medium"></div>
+                  <div class="progress-bar-empty pbe-medium"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="c21-subcard">
+              <div class="c21-title-text-group">
+                <p class="c21-subcard-title">Attrition</p>
+                <p class="progress-bar-text pbt-high">High</p>
+              </div>
+
+              <div class="progress-bar-group">
+                <div class="progress-bar-container">
+                  <div class="progress-bar-filled pbf-high"></div>
+                  <div class="progress-bar-empty pbe-high"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card22">
+        <p class="c22-title">IRA Spenders</p>
+        <p class="c22-subtext">Epsilon Niches </p>
+      </div>
+
+      <!-- Connector card -->
+       <div class="card23">
+        <div class="c23-body">
+        <div class="c23-header">
+          <div class="c23-icon"></div>
+          <div class="c23-text-group">
+            <p class="c23-title"> Epsilon Digital </p>
+            <p class="c23-subtext"> Import + Live Feed + Export </p>
+          </div>
+        </div>
+        <div class="c23-badge-row">
+          <div class="c23-badge">Audio</div>
+          <div class="c23-badge">CTV</div>
+          <div class="c23-badge">Display</div>
+        </div>
+      </div>
+        <div class="c23-footer">
+          <div class="c23-footer-left">
+
+            <div class="c23-footer-text-icon-group">
+              <div class="c23-footer-icon"></div>
+              <p> 23 </p>
+            </div>
+              <p> Connections </p>
+    
+          </div>
+          <div class="c23-footer-right">
+            <button class="secondary-button"> 
+              <div class="secondary-button-icon"></div>
+              Connection </button>
+          </div>
+        </div>
+       </div>
+      
     </div>
   </body>
 </html>
-

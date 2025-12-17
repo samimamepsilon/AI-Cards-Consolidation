@@ -5,219 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Card Design System Demo</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      /* Demo-specific styles */
-      .demo-wrapper {
-        background: #fff;
-        min-height: 100vh;
-        padding: 24px;
-      }
 
-      .demo-header {
-        max-width: 1400px;
-        margin: 0 auto 32px;
-        padding-bottom: 24px;
-        border-bottom: 2px solid #e6e6e6;
-      }
-
-      .demo-title {
-        font-size: 32px;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 8px;
-      }
-
-      .demo-subtitle {
-        font-size: 16px;
-        color: #737373;
-        margin-bottom: 24px;
-      }
-
-      .filter-controls {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-
-      .filter-group {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-      }
-
-      .filter-label {
-        font-size: 14px;
-        font-weight: 600;
-        color: #1a1a1a;
-      }
-
-      .filter-button {
-        padding: 8px 16px;
-        border: 1px solid #ccc;
-        background: #fff;
-        border-radius: 4px;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s;
-        color: #1a1a1a;
-      }
-
-      .filter-button:hover {
-        background: #f7f7f7;
-        border-color: #0063e6;
-      }
-
-      .filter-button.active {
-        background: #0063e6;
-        color: #fff;
-        border-color: #0063e6;
-      }
-
-      .filter-button.active:hover {
-        background: #0052cc;
-      }
-
-      .demo-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        background-color: #f0f6ff;
-        border-radius: 8px;
-        padding: 36px;
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-        align-items: flex-start;
-      }
-
-      .card-wrapper {
-        position: relative;
-      }
-
-      .card-label {
-        position: absolute;
-        top: -24px;
-        left: 0;
-        font-size: 11px;
-        font-weight: 600;
-        color: #737373;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .card-wrapper.hidden {
-        display: none;
-      }
-
-      .section-header {
-        width: 100%;
-        margin: 48px 0 16px;
-        padding: 16px;
-        background: #f7f7f7;
-        border-radius: 4px;
-        font-size: 18px;
-        font-weight: 700;
-        color: #1a1a1a;
-      }
-
-      .section-header:first-of-type {
-        margin-top: 0;
-      }
-
-      .section-header.hidden {
-        display: none;
-      }
-
-      .stats {
-        display: flex;
-        gap: 24px;
-        margin-top: 16px;
-        padding: 16px;
-        background: #f7f7f7;
-        border-radius: 4px;
-        font-size: 14px;
-      }
-
-      .stat-item {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .stat-label {
-        font-size: 12px;
-        color: #737373;
-        font-weight: 600;
-      }
-
-      .stat-value {
-        font-size: 20px;
-        font-weight: 700;
-        color: #0063e6;
-      }
-
-      .nav-bar {
-        background: #fff;
-        border-bottom: 1px solid #e6e6e6;
-        padding: 16px 24px;
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      }
-
-      .nav-button {
-        padding: 8px 16px;
-        border: 1px solid #ccc;
-        background: #fff;
-        color: #1a1a1a;
-        border-radius: 4px;
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.2s;
-        font-family: 'Source Sans 3', sans-serif;
-      }
-
-      .nav-button:hover {
-        background: #f0f6ff;
-        border-color: #0063e6;
-        color: #0063e6;
-      }
-
-      .nav-button.active {
-        background: #0063e6;
-        color: #fff;
-        border-color: #0063e6;
-      }
-
-      .nav-button.active:hover {
-        background: #0052cc;
-        border-color: #0052cc;
-      }
-    </style>
   </head>
   <body>
     <nav class="nav-bar">
       <a href="index.html" class="nav-button">Home</a>
       <a href="z-demo.html" class="nav-button active">Interactive Demo</a>
       <a href="showcase.html" class="nav-button">All Cards</a>
+      <a href="canvas.html" class="nav-button">Canvas</a>
+      <a href="card-playground.html" class="nav-button">Card Playground</a>
     </nav>
-    <div class="demo-wrapper">
+    <div class="demo-page">
       <div class="demo-header">
         <h1 class="demo-title">Card Design System</h1>
-        <p class="demo-subtitle">Interactive demo showcasing 19 cards categorized as Standard Cards and Wrapper Cards</p>
+        <p class="demo-subtitle">Interactive demo showcasing 23 cards categorized as Standard Cards and Container Cards</p>
         
         <div class="filter-controls">
           <div class="filter-group">
             <span class="filter-label">Type:</span>
             <button class="filter-button active" data-filter="all">All Cards</button>
             <button class="filter-button" data-filter="standard">Standard Cards</button>
-            <button class="filter-button" data-filter="wrapper">Wrapper Cards</button>
+            <button class="filter-button" data-filter="container">Container Cards</button>
           </div>
           
           <div class="filter-group">
@@ -235,29 +43,29 @@
         <div class="stats">
           <div class="stat-item">
             <span class="stat-label">Total Cards</span>
-            <span class="stat-value" id="total-count">19</span>
+            <span class="stat-value" id="total-count">23</span>
           </div>
           <div class="stat-item">
             <span class="stat-label">Standard Cards</span>
-            <span class="stat-value" id="standard-count">14</span>
+            <span class="stat-value" id="standard-count">17</span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Wrapper Cards</span>
-            <span class="stat-value" id="wrapper-count">5</span>
+            <span class="stat-label">Container Cards</span>
+            <span class="stat-value" id="container-count">6</span>
           </div>
           <div class="stat-item">
             <span class="stat-label">Showing</span>
-            <span class="stat-value" id="showing-count">19</span>
+            <span class="stat-value" id="showing-count">23</span>
           </div>
         </div>
       </div>
 
       <div class="demo-container" id="card-container">
         <!-- Standard Cards Section -->
-        <div class="section-header" data-section="standard">Standard Cards (14)</div>
+        <div class="section-header" data-section="standard">Standard Cards (17)</div>
         
         <!-- Card 1: Simple Icon Card - Standard, Icon-Driven -->
-        <div class="card-wrapper" data-type="standard" data-pattern="icon">
+        <div class="card-container" data-type="standard" data-pattern="icon">
           <div class="card-label">Card 1: Icon-Driven</div>
           <div class="card1">
             <div class="icon-circle"></div>
@@ -267,7 +75,7 @@
         </div>
 
         <!-- Card 2: Metrics Dashboard Card - Standard, Metrics -->
-        <div class="card-wrapper" data-type="standard" data-pattern="metrics">
+        <div class="card-container" data-type="standard" data-pattern="metrics">
           <div class="card-label">Card 2: Metrics</div>
           <div class="card2">
             <div class="header">
@@ -302,7 +110,7 @@
         </div>
 
         <!-- Card 3: Profile Summary Card - Standard, Profile -->
-        <div class="card-wrapper" data-type="standard" data-pattern="profile">
+        <div class="card-container" data-type="standard" data-pattern="profile">
           <div class="card-label">Card 3: Profile</div>
           <div class="card3">
             <div class="icon-circle"></div>
@@ -320,7 +128,7 @@
         </div>
 
         <!-- Card 4: Stats Grid Card - Standard, Metrics -->
-        <div class="card-wrapper" data-type="standard" data-pattern="metrics">
+        <div class="card-container" data-type="standard" data-pattern="metrics">
           <div class="card-label">Card 4: Metrics</div>
           <div class="card4">
             <div class="card4-body">
@@ -341,7 +149,7 @@
         </div>
 
         <!-- Card 5: Campaign Performance Card - Standard, Content -->
-        <div class="card-wrapper" data-type="standard" data-pattern="content">
+        <div class="card-container" data-type="standard" data-pattern="content">
           <div class="card-label">Card 5: Content</div>
           <div class="card5">
             <div class="c5-header-grp">
@@ -382,7 +190,7 @@
         </div>
 
         <!-- Card 8: Selection/Action Card - Standard, Icon-Driven, Action -->
-        <div class="card-wrapper" data-type="standard" data-pattern="icon action">
+        <div class="card-container" data-type="standard" data-pattern="icon action">
           <div class="card-label">Card 8: Icon-Driven + Action</div>
           <div class="card8">
             <div class="c8-icon"></div>
@@ -395,7 +203,7 @@
         </div>
 
         <!-- Card 9: Management Card - Standard, Action -->
-        <div class="card-wrapper" data-type="standard" data-pattern="action">
+        <div class="card-container" data-type="standard" data-pattern="action">
           <div class="card-label">Card 9: Action/Management</div>
           <div class="card9">
             <div class="c9-body">
@@ -429,7 +237,7 @@
         </div>
 
         <!-- Card 11: Count Card with Action - Standard, Metrics, Action -->
-        <div class="card-wrapper" data-type="standard" data-pattern="metrics action">
+        <div class="card-container" data-type="standard" data-pattern="metrics action">
           <div class="card-label">Card 11: Metrics + Action</div>
           <div class="card11">
             <div class="c11-icon-text-group">
@@ -447,7 +255,7 @@
         </div>
 
         <!-- Card 12: Criteria/Badge Card - Standard, Content -->
-        <div class="card-wrapper" data-type="standard" data-pattern="content">
+        <div class="card-container" data-type="standard" data-pattern="content">
           <div class="card-label">Card 12: Content</div>
           <div class="card12">
             <p class="c12-title">Criteria</p>
@@ -478,7 +286,7 @@
         </div>
 
         <!-- Card 13: Source Card - Standard, Icon-Driven -->
-        <div class="card-wrapper" data-type="standard" data-pattern="icon">
+        <div class="card-container" data-type="standard" data-pattern="icon">
           <div class="card-label">Card 13: Icon-Driven</div>
           <div class="card13">
             <div class="adobe-icon"></div>
@@ -492,7 +300,7 @@
         </div>
 
         <!-- Card 14: Chart Metrics Card - Standard, Metrics -->
-        <div class="card-wrapper" data-type="standard" data-pattern="metrics">
+        <div class="card-container" data-type="standard" data-pattern="metrics">
           <div class="card-label">Card 14: Metrics</div>
           <div class="card14">
             <div class="c14-header">
@@ -532,7 +340,7 @@
         </div>
 
         <!-- Card 15: Simple Title/Body/Footer Card - Standard, Content -->
-        <div class="card-wrapper" data-type="standard" data-pattern="content">
+        <div class="card-container" data-type="standard" data-pattern="content">
           <div class="card-label">Card 15: Content</div>
           <div class="card15">
             <div class="c15-title-body">
@@ -544,7 +352,7 @@
         </div>
 
         <!-- Card 17: Standard Template Card - Standard, Icon-Driven -->
-        <div class="card-wrapper" data-type="standard" data-pattern="icon">
+        <div class="card-container" data-type="standard" data-pattern="icon">
           <div class="card-label">Card 17: Icon-Driven Template</div>
           <div class="card17 standard1">
             <div class="c17-header-group">
@@ -561,8 +369,26 @@
           </div>
         </div>
 
+        <!-- Card 20: Lifecycle Stage Card - Standard, Icon-Driven -->
+        <div class="card-container" data-type="standard" data-pattern="icon">
+          <div class="card-label">Card 20: Icon-Driven</div>
+          <div class="card20">
+            <div class="c20-header">
+              <div class="c20-icon"></div>
+              <div class="c20-header-text-group">
+                <p class="c20-header-title"> Loyal Multi-Buyer </p>
+                <p class="c20-header-subtext">Lifecycle Stage</p>
+              </div>
+            </div>
+            <p class="c20-footer">
+              From CLS on 07/08/2025 |
+              <span class="c20-footer-link"> View Model </span>
+            </p>
+          </div>
+        </div>
+
         <!-- Card 18: Mini Metric Cards - Standard, Metrics -->
-        <div class="card-wrapper" data-type="standard" data-pattern="metrics">
+        <div class="card-container" data-type="standard" data-pattern="metrics">
           <div class="card-label">Card 18: Metrics (3 instances)</div>
           <div class="c18-container">
             <div class="card18">
@@ -580,12 +406,118 @@
           </div>
         </div>
 
-        <!-- Wrapper Cards Section -->
-        <div class="section-header" data-section="wrapper">Wrapper Cards (5) - Flexible Content Containers</div>
+        <!-- Card 22: Simple Title/Subtext Card - Standard, Content -->
+        <div class="card-container" data-type="standard" data-pattern="content">
+          <div class="card-label">Card 22: Content</div>
+          <div class="card22">
+            <p class="c22-title">IRA Spenders</p>
+            <p class="c22-subtext">Epsilon Niches </p>
+          </div>
+        </div>
 
-        <!-- Card 6: Detailed Profile Card - Wrapper, Profile -->
-        <div class="card-wrapper" data-type="wrapper" data-pattern="profile">
-          <div class="card-label">Card 6: Profile Wrapper</div>
+        <!-- Card 23: Connector Card - Standard, Icon-Driven, Action -->
+        <div class="card-container" data-type="standard" data-pattern="icon action">
+          <div class="card-label">Card 23: Icon-Driven + Action</div>
+          <div class="card23">
+            <div class="c23-body">
+              <div class="c23-header">
+                <div class="c23-icon"></div>
+                <div class="c23-text-group">
+                  <p class="c23-title"> Epsilon Digital </p>
+                  <p class="c23-subtext"> Import + Live Feed + Export </p>
+                </div>
+              </div>
+              <div class="c23-badge-row">
+                <div class="c23-badge">Audio</div>
+                <div class="c23-badge">CTV</div>
+                <div class="c23-badge">Display</div>
+              </div>
+            </div>
+            <div class="c23-footer">
+              <div class="c23-footer-left">
+                <div class="c23-footer-text-icon-group">
+                  <div class="c23-footer-icon"></div>
+                  <p> 23 </p>
+                </div>
+                <p> Connections </p>
+              </div>
+              <div class="c23-footer-right">
+                <button class="secondary-button"> 
+                  <div class="secondary-button-icon"></div>
+                  Connection </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Container Cards Section -->
+        <div class="section-header" data-section="container">Container Cards (6) - Flexible Content Container Cards</div>
+
+        <!-- Card 21: Engagement Stage Card - Container, Container with Nested Subcards -->
+        <div class="card-container" data-type="container" data-pattern="container">
+          <div class="card-label">Card 21: Container Card</div>
+          <div class="card21">
+            <div class="c21-header">
+              <div class="c21-header-group">
+                <div class="c21-icon"></div>
+                <p class="c21-header-text">Engagement Stage</p>
+              </div>
+
+              <div class="c21-footer">
+                From CLS on 07/08/2025
+                <span class="c20-footer-link"> View Model </span>
+              </div>
+            </div>
+            <div class="c21-body">
+              <p class="c21-body-title">Convert</p>
+              <div class="c21-subcard-group">
+                <div class="c21-subcard">
+                  <div class="c21-title-text-group">
+                    <p class="c21-subcard-title">Value</p>
+                    <div class="progress-bar-text pbt-low">Low</div>
+                  </div>
+                  <div class="progress-bar-group">
+                    <div class="progress-bar-container">
+                      <div class="progress-bar-filled"></div>
+                      <div class="progress-bar-empty"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="c21-subcard">
+                  <div class="c21-title-text-group">
+                    <p class="c21-subcard-title">Attrition</p>
+                    <p class="progress-bar-text pbt-medium">Medium</p>
+                  </div>
+                  <div class="progress-bar-group">
+                    <div class="progress-bar-container">
+                      <div class="progress-bar-filled pbf-medium"></div>
+                      <div class="progress-bar-empty pbe-medium"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="c21-subcard">
+                  <div class="c21-title-text-group">
+                    <p class="c21-subcard-title">Attrition</p>
+                    <p class="progress-bar-text pbt-high">High</p>
+                  </div>
+
+                  <div class="progress-bar-group">
+                    <div class="progress-bar-container">
+                      <div class="progress-bar-filled pbf-high"></div>
+                      <div class="progress-bar-empty pbe-high"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Detailed Profile Card - Container, Profile -->
+        <div class="card-container" data-type="container" data-pattern="profile">
+          <div class="card-label">Card 6: Profile Container Card</div>
           <div class="card6">
             <div class="c6-header">
               <div class="icon-placeholder"></div>
@@ -640,9 +572,9 @@
           </div>
         </div>
 
-        <!-- Card 7: Extended Profile Card - Wrapper, Profile -->
-        <div class="card-wrapper" data-type="wrapper" data-pattern="profile">
-          <div class="card-label">Card 7: Profile Wrapper</div>
+        <!-- Card 7: Extended Profile Card - Container, Profile -->
+        <div class="card-container" data-type="container" data-pattern="profile">
+          <div class="card-label">Card 7: Profile Container Card</div>
           <div class="card7">
             <div class="c7-header-group">
               <div class="c7-header">
@@ -713,9 +645,9 @@
           </div>
         </div>
 
-        <!-- Card 10: Content/List Card - Wrapper, Content -->
-        <div class="card-wrapper" data-type="wrapper" data-pattern="content">
-          <div class="card-label">Card 10: Content Wrapper</div>
+        <!-- Card 10: Content/List Card - Container, Content -->
+        <div class="card-container" data-type="container" data-pattern="content">
+          <div class="card-label">Card 10: Content Container Card</div>
           <div class="card10">
             <p class="c10-title">Campaign Flow Summary</p>
             <ul class="c10-list">
@@ -726,9 +658,9 @@
           </div>
         </div>
 
-        <!-- Card 16: Form/Settings Card - Wrapper, Form -->
-        <div class="card-wrapper" data-type="wrapper" data-pattern="form">
-          <div class="card-label">Card 16: Form Wrapper</div>
+        <!-- Card 16: Form/Settings Card - Container, Form -->
+        <div class="card-container" data-type="container" data-pattern="form">
+          <div class="card-label">Card 16: Form Container Card</div>
           <div class="card16">
             <div class="c16-header">
               <p class="c16-header-title">Flight Dates</p>
@@ -758,9 +690,9 @@
           </div>
         </div>
 
-        <!-- Card 19: Form Card - Wrapper, Form -->
-        <div class="card-wrapper" data-type="wrapper" data-pattern="form">
-          <div class="card-label">Card 19: Form Wrapper</div>
+        <!-- Card 19: Form Card - Container, Form -->
+        <div class="card-container" data-type="container" data-pattern="form">
+          <div class="card-label">Card 19: Form Container Card</div>
           <div class="card19">
             <div class="c19-group">
               <p class="c19-label">Campaign Name</p>
@@ -796,7 +728,7 @@
     <script>
       // Filter functionality
       const filterButtons = document.querySelectorAll('.filter-button');
-      const cardWrappers = document.querySelectorAll('.card-wrapper');
+      const cardContainers = document.querySelectorAll('.card-container');
       const sectionHeaders = document.querySelectorAll('.section-header');
       const showingCount = document.getElementById('showing-count');
 
@@ -816,7 +748,7 @@
 
         // Filter cards
         let visibleCount = 0;
-        cardWrappers.forEach(card => {
+        cardContainers.forEach(card => {
           const cardType = card.dataset.type;
           const cardPatterns = card.dataset.pattern.split(' ');
           
@@ -835,7 +767,7 @@
         // Show/hide section headers based on visible cards
         sectionHeaders.forEach(header => {
           const section = header.dataset.section;
-          const hasVisibleCards = Array.from(cardWrappers).some(card => {
+          const hasVisibleCards = Array.from(cardContainers).some(card => {
             if (card.dataset.type !== section) return false;
             const cardPatterns = card.dataset.pattern.split(' ');
             const typeMatch = activeTypeFilter === 'all' || card.dataset.type === activeTypeFilter;

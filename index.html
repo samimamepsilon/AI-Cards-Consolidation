@@ -5,176 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Card Design System</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      /* Landing page styles */
-      .landing-wrapper {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: #f0f6ff;
-        padding: 24px;
-      }
-
-      .landing-content {
-        max-width: 800px;
-        text-align: center;
-        background: #fff;
-        padding: 48px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
-      .landing-title {
-        font-size: 48px;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 16px;
-      }
-
-      .landing-subtitle {
-        font-size: 20px;
-        color: #737373;
-        margin-bottom: 48px;
-      }
-
-      .landing-buttons {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .landing-button {
-        padding: 16px 32px;
-        border: 2px solid #0063e6;
-        background: #0063e6;
-        color: #fff;
-        border-radius: 4px;
-        font-size: 16px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.2s;
-        cursor: pointer;
-        display: inline-block;
-      }
-
-      .landing-button:hover {
-        background: #0052cc;
-        border-color: #0052cc;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 99, 230, 0.3);
-      }
-
-      .landing-button.secondary {
-        background: #fff;
-        color: #0063e6;
-      }
-
-      .landing-button.secondary:hover {
-        background: #f0f6ff;
-      }
-
-      .landing-stats {
-        display: flex;
-        gap: 32px;
-        justify-content: center;
-        margin-top: 48px;
-        padding-top: 48px;
-        border-top: 1px solid #e6e6e6;
-      }
-
-      .landing-stat {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .landing-stat-value {
-        font-size: 32px;
-        font-weight: 700;
-        color: #0063e6;
-      }
-
-      .landing-stat-label {
-        font-size: 14px;
-        color: #737373;
-        font-weight: 600;
-      }
-
-      .nav-bar {
-        background: #fff;
-        border-bottom: 1px solid #e6e6e6;
-        padding: 16px 24px;
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      }
-
-      .nav-button {
-        padding: 8px 16px;
-        border: 1px solid #ccc;
-        background: #fff;
-        color: #1a1a1a;
-        border-radius: 4px;
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.2s;
-        font-family: 'Source Sans 3', sans-serif;
-      }
-
-      .nav-button:hover {
-        background: #f0f6ff;
-        border-color: #0063e6;
-        color: #0063e6;
-      }
-
-      .nav-button.active {
-        background: #0063e6;
-        color: #fff;
-        border-color: #0063e6;
-      }
-
-      .nav-button.active:hover {
-        background: #0052cc;
-        border-color: #0052cc;
-      }
-    </style>
   </head>
   <body>
     <nav class="nav-bar">
       <a href="index.html" class="nav-button active">Home</a>
       <a href="z-demo.html" class="nav-button">Interactive Demo</a>
       <a href="showcase.html" class="nav-button">All Cards</a>
+      <a href="canvas.html" class="nav-button">Canvas</a>
+      <a href="card-playground.html" class="nav-button">Card Playground</a>
     </nav>
-    <div class="landing-wrapper">
+    <div class="landing-container">
       <div class="landing-content">
         <h1 class="landing-title">Card Design System</h1>
-        <p class="landing-subtitle">19 cards categorized into Standard Cards and Wrapper Cards</p>
+        <p class="landing-subtitle">22 cards categorized into Standard Cards and Container Cards</p>
         
         <div class="landing-buttons">
           <a href="z-demo.html" class="landing-button">Interactive Demo</a>
           <a href="showcase.html" class="landing-button secondary">View All Cards</a>
+          <a href="card-playground.html" class="landing-button secondary">Card Playground</a>
+          <a href="canvas.html" class="landing-button secondary">Canvas</a>
         </div>
 
         <div class="landing-stats">
           <div class="landing-stat">
-            <div class="landing-stat-value">19</div>
+            <div class="landing-stat-value">22</div>
             <div class="landing-stat-label">Total Cards</div>
           </div>
           <div class="landing-stat">
-            <div class="landing-stat-value">14</div>
+            <div class="landing-stat-value">16</div>
             <div class="landing-stat-label">Standard Cards</div>
           </div>
           <div class="landing-stat">
-            <div class="landing-stat-value">5</div>
-            <div class="landing-stat-label">Wrapper Cards</div>
+            <div class="landing-stat-value">6</div>
+            <div class="landing-stat-label">Container Cards</div>
           </div>
         </div>
       </div>

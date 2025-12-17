@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unified Card Component - Playground</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* ============================================
+         UNIFIED CARD PLAYGROUND STYLES
+         ============================================ */
+
+      .playground-page {
+        width: 100%;
+        min-height: 90vh;
+        background: #f9fbff;
+        padding: 24px;
+      }
+
+      .playground-header {
+        max-width: 1600px;
+        margin: 0 auto 32px;
+      }
+
+      .playground-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 8px;
+      }
+
+      .playground-subtitle {
+        font-size: 16px;
+        color: #737373;
+        margin-bottom: 24px;
+      }
+
+      .playground-layout {
+        max-width: 1600px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 32px;
+      }
+
+      .preview-section {
+        background: #fff;
+        border-radius: 8px;
+        padding: 32px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        height: fit-content;
+      }
+
+      .preview-header {
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #e6e6e6;
+      }
+
+      .preview-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 4px;
+      }
+
+      .preview-subtitle {
+        font-size: 14px;
+        color: #737373;
+      }
+
+      .preview-area {
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #F7F9FC;
+        border-radius: 8px;
+        padding: 48px;
+      }
+
+      .controls-section {
+        background: #fff;
+        border-radius: 8px;
+        padding: 24px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        max-height: calc(100vh - 300px);
+        overflow-y: auto;
+      }
+
+      .controls-header {
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #e6e6e6;
+      }
+
+      .controls-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+
+      .control-group {
+        margin-bottom: 24px;
+      }
+
+      .control-group-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 12px;
+      }
+
+      .control-item {
+        margin-bottom: 16px;
+      }
+
+      .control-label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 6px;
+      }
+
+      .control-input {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #e6e6e6;
+        border-radius: 4px;
+        font-size: 14px;
+        font-family: "Source Sans 3", sans-serif;
+      }
+
+      .control-input:focus {
+        outline: none;
+        border-color: #0063e6;
+        box-shadow: 0 0 0 3px rgba(0, 99, 230, 0.1);
+      }
+
+      .control-select {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #e6e6e6;
+        border-radius: 4px;
+        font-size: 14px;
+        font-family: "Source Sans 3", sans-serif;
+        background: #fff;
+        cursor: pointer;
+      }
+
+      .control-select:focus {
+        outline: none;
+        border-color: #0063e6;
+        box-shadow: 0 0 0 3px rgba(0, 99, 230, 0.1);
+      }
+
+      .control-toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .toggle-switch {
+        position: relative;
+        width: 44px;
+        height: 24px;
+        background: #ccc;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .toggle-switch.active {
+        background: #0063e6;
+      }
+
+      .toggle-switch::after {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #fff;
+        top: 3px;
+        left: 3px;
+        transition: transform 0.2s;
+      }
+
+      .toggle-switch.active::after {
+        transform: translateX(20px);
+      }
+
+      .control-radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .control-radio {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+      }
+
+      .control-radio input[type="radio"] {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+
+      .control-radio label {
+        font-size: 13px;
+        color: #1a1a1a;
+        cursor: pointer;
+      }
+
+      /* ============================================
+         UNIFIED CARD COMPONENT (Token-Driven)
+         ============================================ */
+
+      .unified-card {
+        --card-bg: #fff;
+        --card-border-style: solid;
+        --card-border-width: 1px;
+        --card-border-color: #e6e6e6;
+        --card-border-radius: 4px;
+        --card-padding: 16px;
+        --card-gap: 16px;
+        --card-display: flex;
+        --card-flex-direction: column;
+        
+        /* Typography tokens */
+        --card-title-font-family: "Source Sans 3", sans-serif;
+        --card-title-font-size: 14px;
+        --card-title-font-weight: 700;
+        --card-title-color: #1a1a1a;
+        
+        --card-subtitle-font-size: 12px;
+        --card-subtitle-font-weight: 400;
+        --card-subtitle-color: #737373;
+        
+        --card-body-font-size: 14px;
+        --card-body-font-weight: 400;
+        --card-body-color: #1a1a1a;
+        
+        /* Icon tokens */
+        --card-icon-size: 32px;
+        --card-icon-shape: circle;
+        --card-icon-bg: #0063e6;
+        
+        /* Layout */
+        background: var(--card-bg);
+        border: var(--card-border-width) var(--card-border-style) var(--card-border-color);
+        border-radius: var(--card-border-radius);
+        padding: var(--card-padding);
+        display: var(--card-display);
+        flex-direction: var(--card-flex-direction);
+        gap: var(--card-gap);
+        width: 100%;
+        max-width: 400px;
+        transition: all 0.2s ease;
+      }
+
+      .unified-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .card-top-content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .card-icon {
+        width: var(--card-icon-size);
+        height: var(--card-icon-size);
+        min-width: var(--card-icon-size);
+        min-height: var(--card-icon-size);
+        background: var(--card-icon-bg);
+        flex-shrink: 0;
+      }
+
+      .card-icon.square {
+        border-radius: 4px;
+      }
+
+      .card-icon.circle {
+        border-radius: 50%;
+      }
+
+      .card-title-group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+      }
+
+      .card-title {
+        font-family: var(--card-title-font-family);
+        font-size: var(--card-title-font-size);
+        font-weight: var(--card-title-font-weight);
+        color: var(--card-title-color);
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      .card-subtitle {
+        font-size: var(--card-subtitle-font-size);
+        font-weight: var(--card-subtitle-font-weight);
+        color: var(--card-subtitle-color);
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      .card-body {
+        font-size: var(--card-body-font-size);
+        font-weight: var(--card-body-font-weight);
+        color: var(--card-body-color);
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .card-badge {
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        background: #f7f7f7;
+        color: #737373;
+      }
+
+      /* Background variants */
+      .unified-card.bg-primary {
+        --card-bg: #fff;
+      }
+
+      .unified-card.bg-secondary {
+        --card-bg: #f8fafb;
+      }
+
+      .unified-card.bg-tertiary {
+        --card-bg: #F8FAFB;
+      }
+
+      /* Border variants */
+      .unified-card.border-solid-secondary {
+        --card-border-style: solid;
+        --card-border-color: #e6e6e6;
+      }
+
+      .unified-card.border-solid-primary {
+        --card-border-style: solid;
+        --card-border-color: #ccc;
+      }
+
+      .unified-card.border-dashed-primary {
+        --card-border-style: dashed;
+        --card-border-color: #ccc;
+      }
+
+      .unified-card.border-dashed-secondary {
+        --card-border-style: dashed;
+        --card-border-color: #e6e6e6;
+      }
+
+      /* Border radius variants */
+      .unified-card.radius-4 {
+        --card-border-radius: 4px;
+      }
+
+      .unified-card.radius-8 {
+        --card-border-radius: 8px;
+      }
+
+      /* Padding variants */
+      .unified-card.padding-default {
+        --card-padding: 16px;
+      }
+
+      .unified-card.padding-large {
+        --card-padding: 24px;
+      }
+
+      /* Gap variants */
+      .unified-card.gap-default {
+        --card-gap: 16px;
+      }
+
+      .unified-card.gap-small {
+        --card-gap: 8px;
+      }
+
+      /* Typography data variant */
+      .unified-card.title-data-36 {
+        --card-title-font-family: "Montserrat", sans-serif;
+        --card-title-font-size: 36px;
+        --card-title-font-weight: 700;
+      }
+
+      .unified-card.title-data-24 {
+        --card-title-font-family: "Montserrat", sans-serif;
+        --card-title-font-size: 24px;
+        --card-title-font-weight: 700;
+      }
+
+      .unified-card.title-string-15 {
+        --card-title-font-size: 15px;
+        --card-title-font-weight: 700;
+      }
+
+      .unified-card.title-string-14 {
+        --card-title-font-size: 14px;
+        --card-title-font-weight: 700;
+      }
+
+      @media (max-width: 1200px) {
+        .playground-layout {
+          grid-template-columns: 1fr;
+        }
+        
+        .controls-section {
+          max-height: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <a href="index.html" class="nav-button">Home</a>
+      <a href="z-demo.html" class="nav-button">Interactive Demo</a>
+      <a href="showcase.html" class="nav-button">All Cards</a>
+      <a href="canvas.html" class="nav-button">Canvas</a>
+      <a href="card-playground.html" class="nav-button active">Card Playground</a>
+    </nav>
+
+    <div class="playground-page">
+      <div class="playground-header">
+        <h1 class="playground-title">Unified Card Component</h1>
+        <p class="playground-subtitle">Interactive playground for exploring the unified, token-driven Card component system</p>
+      </div>
+
+      <div class="playground-layout">
+        <!-- Preview Section -->
+        <div class="preview-section">
+          <div class="preview-header">
+            <h2 class="preview-title">Card Preview</h2>
+            <p class="preview-subtitle">Live preview of the unified Card component</p>
+          </div>
+          <div class="preview-area">
+            <div class="unified-card" id="cardPreview">
+              <div class="card-top-content" id="topContent">
+                <div class="card-icon circle" id="cardIcon"></div>
+                <div class="card-title-group">
+                  <h3 class="card-title" id="cardTitle">Card Title</h3>
+                  <p class="card-subtitle" id="cardSubtitle">Optional subtext </p>
+                </div>
+              </div>
+              <p class="card-body" id="cardBody">Body text content goes here. This demonstrates how the unified Card component can represent various card variants through configuration.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="controls-section">
+          <div class="controls-header">
+            <h2 class="controls-title">Component Controls</h2>
+          </div>
+
+          <!-- Background Controls -->
+          <div class="control-group">
+            <div class="control-group-title">Background</div>
+            <div class="control-item">
+              <label class="control-label">Background Variant</label>
+              <select class="control-select" id="bgVariant">
+                <option value="primary">Primary (#fff)</option>
+                <option value="secondary">Secondary (#f8fafb)</option>
+                <option value="tertiary">Tertiary (#f4f6f9)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Border Controls -->
+          <div class="control-group">
+            <div class="control-group-title">Border</div>
+            <div class="control-item">
+              <label class="control-label">Border Style</label>
+              <select class="control-select" id="borderStyle">
+                <option value="solid-primary">Solid Primary (#ccc)</option>
+                <option value="solid-secondary">Solid Secondary (#e6e6e6)</option>
+                <option value="dashed-primary">Dashed Primary (#ccc)</option>
+                <option value="dashed-secondary">Dashed Secondary (#e6e6e6)</option>
+              </select>
+            </div>
+            <div class="control-item">
+              <label class="control-label">Border Radius</label>
+              <select class="control-select" id="borderRadius">
+                <option value="4">4px</option>
+                <option value="8">8px</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Padding Controls -->
+          <div class="control-group">
+            <div class="control-group-title">Padding</div>
+            <div class="control-item">
+              <label class="control-label">Padding Variant</label>
+              <select class="control-select" id="paddingVariant">
+                <option value="default">Default (16px)</option>
+                <option value="large">Large (24px)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Layout Controls -->
+          <div class="control-group">
+            <div class="control-group-title">Layout</div>
+            <div class="control-item">
+              <label class="control-label">Gap</label>
+              <select class="control-select" id="gapVariant">
+                <option value="default">Default (16px)</option>
+                <option value="small">Small (8px)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Typography Controls -->
+          <div class="control-group">
+            <div class="control-group-title">Typography</div>
+            <div class="control-item">
+              <label class="control-label">Title Style</label>
+              <select class="control-select" id="titleStyle">
+                <option value="string-14">String - 14px (700)</option>
+                <option value="string-15">String - 15px (700)</option>
+                <option value="data-24">Data - 24px (Montserrat 700)</option>
+                <option value="data-36">Data - 36px (Montserrat 700)</option>
+              </select>
+            </div>
+            <div class="control-item">
+              <label class="control-label">Title Text</label>
+              <input type="text" class="control-input" id="titleText" value="Card Title">
+            </div>
+            <div class="control-item">
+              <label class="control-label">Subtitle Text</label>
+              <input type="text" class="control-input" id="subtitleText" value="Optional subtitle text">
+            </div>
+            <div class="control-item">
+                <div class="control-toggle">
+                  <div class="toggle-switch" id="showSubtitle"></div>
+                  <label class="control-label" for="showSubtitle">Show Subtitle</label>
+                </div>
+              </div>
+            <div class="control-item">
+              <label class="control-label">Body Text</label>
+              <textarea class="control-input" id="bodyText" rows="3">Body text content goes here. This demonstrates how the unified Card component can represent various card variants through configuration.</textarea>
+            </div>
+                      <!-- Content Visibility -->
+          <div class="control-group">
+            <div class="control-group-title">Content Visibility</div>
+            <div class="control-item">
+              <div class="control-toggle">
+                <div class="toggle-switch active" id="showBody"></div>
+                <label class="control-label" for="showBody">Show Body Text</label>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+          <!-- Icon Controls -->
+          <div class="control-group">
+            <div class="control-group-title">Icon</div>
+
+            <div class="control-item">
+              <label class="control-label">Icon Size</label>
+              <select class="control-select" id="iconSize">
+                <option value="16">16px</option>
+                <option value="24">24px</option>
+                <option value="32" selected>32px</option>
+                <option value="48">48px</option>
+              </select>
+            </div>
+            <div class="control-item">
+              <label class="control-label">Icon Shape</label>
+              <div class="control-radio-group">
+                <div class="control-radio">
+                  <input type="radio" name="iconShape" id="iconCircle" value="circle" checked>
+                  <label for="iconCircle">Circle</label>
+                </div>
+                <div class="control-radio">
+                  <input type="radio" name="iconShape" id="iconSquare" value="square">
+                  <label for="iconSquare">Square</label>
+                </div>
+              </div>
+            </div>
+            <div class="control-item">
+                <div class="control-toggle">
+                  <div class="toggle-switch active" id="showIcon"></div>
+                  <label class="control-label" for="showIcon">Show Icon</label>
+                </div>
+              </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ============================================
+      // UNIFIED CARD PLAYGROUND CONTROLLER
+      // ============================================
+
+      const card = document.getElementById('cardPreview');
+      const cardIcon = document.getElementById('cardIcon');
+      const cardTitle = document.getElementById('cardTitle');
+      const cardSubtitle = document.getElementById('cardSubtitle');
+      const cardBody = document.getElementById('cardBody');
+      const topContent = document.getElementById('topContent');
+
+      // Initialize toggle switches
+      function initToggle(id, defaultValue = false) {
+        const toggle = document.getElementById(id);
+        if (defaultValue) toggle.classList.add('active');
+        
+        toggle.addEventListener('click', () => {
+          toggle.classList.toggle('active');
+          updateCard();
+        });
+        
+        return toggle;
+      }
+
+      const showSubtitleToggle = initToggle('showSubtitle', true);
+      const showIconToggle = initToggle('showIcon', true);
+      const showBodyToggle = initToggle('showBody', true);
+
+      // Background Control
+      document.getElementById('bgVariant').addEventListener('change', (e) => {
+        card.className = card.className.replace(/bg-\w+/g, '');
+        card.classList.add(`bg-${e.target.value}`);
+      });
+
+      // Border Controls
+      document.getElementById('borderStyle').addEventListener('change', (e) => {
+        card.className = card.className.replace(/border-\w+-\w+/g, '');
+        card.classList.add(`border-${e.target.value}`);
+      });
+
+      document.getElementById('borderRadius').addEventListener('change', (e) => {
+        card.className = card.className.replace(/radius-\d+/g, '');
+        card.classList.add(`radius-${e.target.value}`);
+      });
+
+      // Padding Control
+      document.getElementById('paddingVariant').addEventListener('change', (e) => {
+        card.className = card.className.replace(/padding-\w+/g, '');
+        card.classList.add(`padding-${e.target.value}`);
+      });
+
+      // Gap Control
+      document.getElementById('gapVariant').addEventListener('change', (e) => {
+        card.className = card.className.replace(/gap-\w+/g, '');
+        card.classList.add(`gap-${e.target.value}`);
+      });
+
+      // Typography Controls
+      document.getElementById('titleStyle').addEventListener('change', (e) => {
+        card.className = card.className.replace(/title-\w+-\d+/g, '');
+        card.classList.add(`title-${e.target.value}`);
+      });
+
+      document.getElementById('titleText').addEventListener('input', (e) => {
+        cardTitle.textContent = e.target.value || 'Card Title';
+      });
+
+      document.getElementById('subtitleText').addEventListener('input', (e) => {
+        cardSubtitle.textContent = e.target.value;
+      });
+
+      document.getElementById('bodyText').addEventListener('input', (e) => {
+        cardBody.textContent = e.target.value;
+      });
+
+      // Icon Controls
+      document.getElementById('iconSize').addEventListener('change', (e) => {
+        cardIcon.style.width = `${e.target.value}px`;
+        cardIcon.style.height = `${e.target.value}px`;
+        cardIcon.style.minWidth = `${e.target.value}px`;
+        cardIcon.style.minHeight = `${e.target.value}px`;
+      });
+
+      document.querySelectorAll('input[name="iconShape"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          cardIcon.className = 'card-icon';
+          cardIcon.classList.add(e.target.value);
+        });
+      });
+
+      // Update card visibility
+      function updateCard() {
+        // Subtitle visibility
+        cardSubtitle.style.display = showSubtitleToggle.classList.contains('active') ? 'block' : 'none';
+        
+        // Icon visibility
+        cardIcon.style.display = showIconToggle.classList.contains('active') ? 'block' : 'none';
+        
+        // Body visibility
+        cardBody.style.display = showBodyToggle.classList.contains('active') ? 'block' : 'none';
+      }
+
+      // Initial update
+      updateCard();
+
+      // Update on toggle changes
+      showSubtitleToggle.addEventListener('click', updateCard);
+      showIconToggle.addEventListener('click', updateCard);
+      showBodyToggle.addEventListener('click', updateCard);
+    </script>
+  </body>
+</html>
+

@@ -1,7 +1,7 @@
 # Card Design Categorization & Architecture Analysis
 
 ## Overview
-This document categorizes all 19 cards in the system, identifying patterns, reusability, and distinguishing between **Standard Cards** (predefined structure) and **Wrapper Cards** (flexible content containers).
+This document categorizes all 21 cards in the system, identifying patterns, reusability, and distinguishing between **Standard Cards** (predefined structure) and **Container Cards** (flexible content container cards).
 
 ---
 
@@ -9,124 +9,157 @@ This document categorizes all 19 cards in the system, identifying patterns, reus
 
 ### **Card 1**: Simple Icon Card
 - **Structure**: Icon + Header + Body
+- **Size**: 160×120px (small, compact)
 - **Density**: Low (3 elements)
 - **Pattern**: Icon-driven, minimal content
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed small size, predictable structure)
 
 ### **Card 2**: Metrics Dashboard Card
 - **Structure**: Header + Body (Big Number + Trend + Badge Group)
+- **Size**: 237px width (medium)
 - **Density**: Medium-High (4-5 elements + badge cluster)
 - **Pattern**: Data/metrics focused with supporting indicators
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed structure, consistent metrics display)
 
 ### **Card 3**: Profile Summary Card
 - **Structure**: Icon + Body (Name/Badge + Metadata)
+- **Size**: min-width 520px (wide)
 - **Density**: Medium (3-4 elements)
 - **Pattern**: Profile/entity with metadata
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed wide structure, predictable layout)
 
 ### **Card 4**: Stats Grid Card
 - **Structure**: Body (Key-Value Pairs)
+- **Size**: 262px width (medium)
 - **Density**: Medium (3-4 stat pairs)
 - **Pattern**: Simple metric display
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed grid structure)
 
 ### **Card 5**: Campaign Performance Card
 - **Structure**: Header (Title + Badge) + Body (Metric Rows)
+- **Size**: min-width 233px (medium)
 - **Density**: High (7+ metric rows)
 - **Pattern**: Structured data table-like display
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed row structure, consistent metric display)
 
 ### **Card 6**: Detailed Profile Card
 - **Structure**: Header (Icon + Title + Timestamp) + Body (Sections with icons/fields)
+- **Size**: 311px width
 - **Density**: Very High (10+ elements across multiple sections)
 - **Pattern**: Complex profile with nested groupings
-- **Category**: **Wrapper Card** (flexible body sections)
+- **Category**: **Container Card** (flexible body sections that can accommodate varied profile data)
 
 ### **Card 7**: Extended Profile Card
 - **Structure**: Header Group (Title + Metadata Rows) + Body (Contact Info Rows + Button)
+- **Size**: 313px width
 - **Density**: Very High (10+ rows + metadata)
 - **Pattern**: Complex profile with multiple contact methods and status indicators
-- **Category**: **Wrapper Card** (flexible body with custom rows)
+- **Category**: **Container Card** (flexible body with custom rows that can vary in number and content)
 
 ### **Card 8**: Selection/Action Card
 - **Structure**: Icon + Title + Description + Button
+- **Size**: 313px width (medium)
 - **Density**: Low-Medium (4 elements)
 - **Pattern**: Selection/CTA with description
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed selection structure)
 
 ### **Card 9**: Management Card
 - **Structure**: Body (Title + Multiple Groups) + Footer (Action Buttons)
+- **Size**: 269px width (medium)
 - **Density**: Medium-High (3-4 groups + footer)
 - **Pattern**: Entity management with metadata groups
-- **Category**: **Standard Card** (but could be wrapper variant)
+- **Category**: **Standard Card** (fixed group structure, predictable layout)
 
 ### **Card 10**: Content/List Card
 - **Structure**: Title + Unordered List
+- **Size**: No fixed width (content-based)
 - **Density**: Medium (depends on list length)
 - **Pattern**: Text content display
-- **Category**: **Wrapper Card** (flexible content area)
+- **Category**: **Container Card** (flexible content area that can accommodate any list length or content type)
 
 ### **Card 11**: Count Card with Action
 - **Structure**: Icon/Text Group + Button/Badge Group
+- **Size**: 700px width (wide)
 - **Density**: Low-Medium (2 main groups)
 - **Pattern**: Metric display with action
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed wide structure, consistent layout)
 
 ### **Card 12**: Criteria/Badge Card
 - **Structure**: Title + Body (Multiple Text-Badge Groups)
+- **Size**: min-width 313px (medium)
 - **Density**: Medium-High (3+ badge groups)
 - **Pattern**: Categorized badge display
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed badge group structure)
 
 ### **Card 13**: Source Card
 - **Structure**: Icon + Title + Tag Group + Source Label
+- **Size**: Padding-based, centered (compact)
 - **Density**: Low-Medium (4 elements)
 - **Pattern**: Entity identification with tags
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed centered structure)
 
 ### **Card 14**: Chart Metrics Card
 - **Structure**: Header (Title + Status Badge) + Body (Number + Trend + Chart) + Footer (Goal)
+- **Size**: 290px width (medium)
 - **Density**: Medium (4-5 elements)
 - **Pattern**: Metrics with visualization
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed chart structure)
 
 ### **Card 15**: Simple Title/Body/Footer Card
 - **Structure**: Title + Body + Footer (aligned right)
+- **Size**: 266px width (medium)
 - **Density**: Low (3 elements)
 - **Pattern**: Minimal content display
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed simple structure)
 
 ### **Card 16**: Form/Settings Card
 - **Structure**: Header (Title + Info) + Body (Form Groups: Checkboxes, Inputs, Buttons)
+- **Size**: 554px width (large)
 - **Density**: Medium-High (multiple form elements)
 - **Pattern**: Settings/configuration interface
-- **Category**: **Wrapper Card** (flexible form content)
+- **Category**: **Container Card** (flexible form content that can accommodate different form field combinations)
 
 ### **Card 17**: Standard Template Card
 - **Structure**: Header Group (Icon + Subheader + Header) + Body + Button
+- **Size**: 263px width (medium)
 - **Density**: Low-Medium (4 elements)
 - **Pattern**: Generic template pattern
-- **Category**: **Standard Card** (Template pattern)
+- **Category**: **Standard Card** (fixed template structure)
 
 ### **Card 18**: Mini Metric Cards (3 instances)
 - **Structure**: Header + Number
+- **Size**: 100×100px (small, compact)
 - **Density**: Very Low (2 elements)
 - **Pattern**: Compact metric display
-- **Category**: **Standard Card**
+- **Category**: **Standard Card** (fixed compact structure, used in groups)
 
 ### **Card 19**: Form Card
 - **Structure**: Multiple Form Groups (Labels, Inputs, Textarea, Icon Buttons, Tags)
+- **Size**: 616px width (large)
 - **Density**: High (4-5 form groups)
 - **Pattern**: Complex form interface
-- **Category**: **Wrapper Card** (flexible form groups)
+- **Category**: **Container Card** (flexible form groups that can vary in number and type of inputs)
+
+### **Card 20**: Lifecycle Stage Card
+- **Structure**: Header (Icon + Text) + Body + Footer (Metadata + Link)
+- **Size**: 375px width (medium)
+- **Density**: Low-Medium (4 elements)
+- **Pattern**: Icon-driven with metadata display
+- **Category**: **Standard Card** (fixed structure)
+
+### **Card 21**: Engagement Stage Card
+- **Structure**: Header (Icon + Text) + Body + Subcard Group (Progress Bars) + Footer
+- **Size**: fit-content (medium-large)
+- **Density**: Medium-High (header, body, multiple progress indicators)
+- **Pattern**: Icon-driven with data visualization (progress bars)
+- **Category**: **Container Card** (contains nested subcards within a flexible subcard-group container)
 
 ---
 
 ## Categorization Framework
 
 ### **STANDARD CARDS** (Predefined Structure)
-Cards with a fixed, predictable structure that can be easily templated and reused.
+Cards with a fixed, predictable structure that can be easily templated and reused. These cards have consistent sizes and design patterns, making them ideal for componentization.
 
 **Characteristics:**
 - Fixed layout patterns
@@ -134,33 +167,42 @@ Cards with a fixed, predictable structure that can be easily templated and reuse
 - Consistent visual hierarchy
 - Easy to componentize
 - Limited customization of structure
+- Small to medium-large sizes (100px - 700px width)
+- Fixed content structure regardless of size
 
-**Examples:**
-- Card 1 (Icon + Header + Body)
-- Card 2 (Metrics Dashboard)
-- Card 3 (Profile Summary)
-- Card 4 (Stats Grid)
-- Card 5 (Campaign Performance)
-- Card 8 (Selection Card)
-- Card 11 (Count Card)
-- Card 12 (Criteria Card)
-- Card 13 (Source Card)
-- Card 14 (Chart Metrics)
-- Card 15 (Simple Title/Body/Footer)
-- Card 17 (Standard Template)
-- Card 18 (Mini Metrics)
+**Examples (16 cards):**
+- **Small/Compact Cards:**
+  - Card 1 (160×120px) - Icon + Header + Body
+  - Card 18 (100×100px) - Mini Metrics (3 instances)
+  
+- **Medium Cards (200-400px):**
+  - Card 2 (237px) - Metrics Dashboard
+  - Card 4 (262px) - Stats Grid
+  - Card 5 (min-width 233px) - Campaign Performance
+  - Card 8 (313px) - Selection Card
+  - Card 9 (269px) - Management Card
+  - Card 12 (min-width 313px) - Criteria Card
+  - Card 14 (290px) - Chart Metrics
+  - Card 15 (266px) - Simple Title/Body/Footer
+  - Card 17 (263px) - Standard Template
+  - Card 20 (375px) - Lifecycle Stage
+  
+- **Wide Cards (400-700px):**
+  - Card 3 (min-width 520px) - Profile Summary
+  - Card 11 (700px) - Count Card with Action
+  - Card 13 (Padding-based, centered) - Source Card
 
 **Standard Card Patterns:**
-1. **Icon-Driven Cards** (Card 1, 8, 13, 17)
+1. **Icon-Driven Cards** (Card 1, 8, 13, 17, 20)
 2. **Metrics Cards** (Card 2, 4, 11, 14, 18)
 3. **Profile Cards** (Card 3)
-4. **List/Content Cards** (Card 5, 10)
+4. **List/Content Cards** (Card 5)
 5. **Action Cards** (Card 8, 9, 11)
 
 ---
 
-### **WRAPPER CARDS** (Flexible Content Containers)
-Cards that provide structure but allow completely customizable content within defined sections.
+### **CONTAINER CARDS** (Flexible Content Container Cards)
+Cards that provide structure but allow completely customizable content within defined sections. These cards are designed to accommodate varied content types and flexible layouts.
 
 **Characteristics:**
 - Flexible content areas
@@ -168,22 +210,32 @@ Cards that provide structure but allow completely customizable content within de
 - Accommodates varied content types
 - More complex layouts
 - Customizable internal structure
+- Medium to large sizes (300px - 600px+ width)
+- Variable content that can change based on use case
 
-**Examples:**
-- Card 6 (Detailed Profile - flexible body sections)
-- Card 7 (Extended Profile - flexible rows)
-- Card 10 (Content Card - flexible list/content)
-- Card 16 (Form Card - flexible form groups)
-- Card 19 (Form Card - flexible form groups)
+**Examples (6 cards):**
+- **Profile Container Cards:**
+  - Card 6 (311px) - Detailed Profile with flexible body sections
+  - Card 7 (313px) - Extended Profile with flexible contact info rows
+  
+- **Content Container Cards:**
+  - Card 10 (No fixed width) - Content/List Card with flexible content area
+  
+- **Form Container Cards:**
+  - Card 16 (554px) - Form/Settings Card with flexible form groups
+  - Card 19 (616px) - Form Card with flexible form groups
+  
+- **Container Cards with Nested Subcards:**
+  - Card 21 (fit-content) - Engagement Stage Card with nested subcards container
 
-**Wrapper Card Patterns:**
-1. **Profile Wrappers** (Card 6, 7)
-2. **Content Wrappers** (Card 10)
-3. **Form Wrappers** (Card 16, 19)
+**Container Card Patterns:**
+1. **Profile Container Cards** (Card 6, 7)
+2. **Content Container Cards** (Card 10)
+3. **Form Container Cards** (Card 16, 19)
 
-**Wrapper Card Architecture:**
+**Container Card Architecture:**
 ```
-Wrapper Card Structure:
+Container Card Structure:
 ├── Header (optional, fixed)
 │   ├── Title/Icon
 │   └── Metadata
@@ -198,10 +250,14 @@ Wrapper Card Structure:
 ## Visual Pattern Recognition
 
 ### **1. Icon-Driven Cards**
-- **Standard**: Card 1, 8, 13, 17
+- **Standard**: Card 1, 8, 13, 17, 20
+- **Container**: Card 21 (with nested subcards)
 - **Pattern**: Visual anchor with supporting text
 - **Icon placement**: Top/left, prominent
 - **Content**: Minimal text, clear hierarchy
+- **Variations**:
+  - Simple (Card 1, 8, 13, 17, 20)
+  - Container with nested subcards (Card 21 - progress bars in subcards)
 
 ### **2. Data/Metrics Cards**
 - **Standard**: Card 2, 4, 11, 14, 18
@@ -214,7 +270,7 @@ Wrapper Card Structure:
 
 ### **3. Profile/Entity Cards**
 - **Standard**: Card 3
-- **Wrapper**: Card 6, 7
+- **Container**: Card 6, 7
 - **Pattern**: Person/object information with metadata
 - **Complexity levels**: 
   - Simple (Card 3)
@@ -227,13 +283,13 @@ Wrapper Card Structure:
 - **Footer actions**: Buttons, badges, status indicators
 
 ### **5. Content Display Cards**
-- **Standard**: Card 5, 10, 12
-- **Wrapper**: Card 10
+- **Standard**: Card 5, 12
+- **Container**: Card 10
 - **Pattern**: Structured content display
 - **Variations**: Lists, badge groups, metric rows
 
 ### **6. Form/Input Cards**
-- **Wrapper**: Card 16, 19
+- **Container**: Card 16, 19
 - **Pattern**: Form elements with labels
 - **Structure**: Grouped inputs, validation, actions
 
@@ -405,7 +461,7 @@ Wrapper Card Structure:
 
 ### **Body Content** (Main Information Area)
 - Consistent padding: `16px`
-- Flexible structure in wrapper cards
+- Flexible structure in container cards
 - Fixed structure in standard cards
 
 ### **Footer Sections** (Optional)
@@ -428,7 +484,7 @@ Wrapper Card Structure:
 - Consistent styling patterns
 - Easy to add new variations
 
-### **Wrapper Card Extensions**
+### **Container Card Extensions**
 - Section-based architecture
 - Flexible content areas
 - Consistent header/footer patterns
@@ -450,7 +506,7 @@ Wrapper Card Structure:
 
 ### **1. Standardize Card Naming**
 - Use semantic names: `metric-card`, `profile-card`, `form-card`
-- Distinguish wrappers: `content-wrapper`, `form-wrapper`
+- Distinguish containers: `content-container`, `form-container`
 
 ### **2. Create Base Card Classes**
 ```css
@@ -462,24 +518,24 @@ Wrapper Card Structure:
   /* Standard card specific */
 }
 
-.wrapper-card {
-  /* Wrapper card specific */
+.container-card {
+  /* Container card specific */
 }
 ```
 
 ### **3. Component Library Structure**
 - **Standard Cards**: Pre-built, slot-based
-- **Wrapper Cards**: Structure-only, content-flexible
+- **Container Cards**: Structure-only, content-flexible
 - **Shared Components**: Badges, buttons, icons, inputs
 
 ### **4. Design System Documentation**
 - Document all standard card patterns
-- Provide wrapper card guidelines
+- Provide container card guidelines
 - Include usage examples for each category
 
 ### **5. Implementation Strategy**
 - Build standard cards as components with props
-- Build wrapper cards as containers with slots
+- Build container cards as containers with slots
 - Create shared component library
 - Maintain design token consistency
 
@@ -487,18 +543,28 @@ Wrapper Card Structure:
 
 ## Summary
 
-**Total Cards Analyzed**: 19
+**Total Cards Analyzed**: 21 (including 3 instances of Card 18)
 
-**Standard Cards**: 14 (74%)
+**Standard Cards**: 15 cards (71%)
 - Fixed structure, predictable patterns
 - Easy to componentize
 - High reusability
+- Size range: 100px - 700px width
+- Consistent design patterns across sizes
 
-**Wrapper Cards**: 5 (26%)
+**Container Cards**: 6 cards (29%)
 - Flexible content areas
 - Section-based structure
 - Customizable internal layouts
+- Size range: 300px - 616px width
+- Accommodate varied content types
+- May contain nested card-like elements
 
-**Key Insight**: The majority of cards follow standard patterns, making them excellent candidates for a component library. Wrapper cards serve important use cases for complex, flexible content needs while maintaining visual consistency through shared header/footer patterns and design tokens.
+**Categorization Rationale:**
+Cards are categorized based on their **design style and size**:
+- **Standard Cards** have fixed, predictable structures regardless of their size (from small 100×100px cards to wide 700px cards)
+- **Container Cards** provide flexible content areas that can accommodate different content types, and may contain nested card-like elements (like Card 21's subcards)
+
+**Key Insight**: The majority of cards follow standard patterns, making them excellent candidates for a component library. Container cards serve important use cases for complex, flexible content needs while maintaining visual consistency through shared header/footer patterns and design tokens.
 
 

@@ -1,12 +1,12 @@
 # Card Design System
 
-A comprehensive collection of card components for building consistent, scalable interfaces. This system includes 19 cards categorized into **Standard Cards** (predefined structure) and **Wrapper Cards** (flexible content containers).
+A comprehensive collection of card components for building consistent, scalable interfaces. This system includes 21 cards categorized into **Standard Cards** (predefined structure) and **Container Cards** (flexible content container cards).
 
 ## 🎯 Overview
 
 This project demonstrates a unified card design system with:
-- **14 Standard Cards** - Fixed, predictable patterns perfect for componentization
-- **5 Wrapper Cards** - Flexible content containers with customizable body sections
+- **15 Standard Cards** - Fixed, predictable patterns perfect for componentization
+- **6 Container Cards** - Flexible content container cards with customizable body sections
 
 ## 📁 Project Structure
 
@@ -23,8 +23,8 @@ Cards - AI Consolidation/
 
 ### View the Demo
 
-1. **Interactive Demo** - Open `demo.html` in your browser
-   - Filter cards by type (Standard vs Wrapper)
+1. **Interactive Demo** - Open `z-demo.html` in your browser
+   - Filter cards by type (Standard vs Container)
    - Filter by pattern (Icon-driven, Metrics, Profile, etc.)
    - View all cards in an organized gallery
 
@@ -44,7 +44,7 @@ Then navigate to `http://localhost:8080/demo.html`
 
 ## 📊 Card Categories
 
-### Standard Cards (14)
+### Standard Cards (15)
 
 **Icon-Driven Cards**
 - Card 1: Simple Icon Card
@@ -70,18 +70,21 @@ Then navigate to `http://localhost:8080/demo.html`
 - Card 12: Criteria/Badge Card
 - Card 15: Simple Title/Body/Footer Card
 
-### Wrapper Cards (5)
+### Container Cards (6)
 
-**Profile Wrappers**
+**Profile Container Cards**
 - Card 6: Detailed Profile Card (flexible body sections)
 - Card 7: Extended Profile Card (flexible rows)
 
-**Content Wrappers**
+**Content Container Cards**
 - Card 10: Content/List Card (flexible content area)
 
-**Form Wrappers**
+**Form Container Cards**
 - Card 16: Form/Settings Card (flexible form groups)
 - Card 19: Form Card (flexible form groups)
+
+**Container Cards with Nested Subcards**
+- Card 21: Engagement Stage Card (with nested subcards)
 
 ## 🎨 Design Tokens
 
@@ -123,11 +126,11 @@ Standard cards have fixed structures and can be easily componentized:
 </div>
 ```
 
-### Wrapper Cards
-Wrapper cards provide structure with flexible content areas:
+### Container Cards
+Container cards provide structure with flexible content areas:
 
 ```html
-<!-- Example: Content Wrapper Pattern -->
+<!-- Example: Content Container Card Pattern -->
 <div class="card10">
   <p class="c10-title">Title</p>
   <!-- Flexible content area -->
@@ -144,7 +147,7 @@ For detailed categorization, patterns, and architecture analysis, see:
 
 ## 🎯 Key Features
 
-- ✅ **19 Unique Card Designs**
+- ✅ **21 Unique Card Designs**
 - ✅ **Consistent Design System**
 - ✅ **Reusable Components** (badges, buttons, icons)
 - ✅ **Interactive Demo** with filtering
@@ -163,17 +166,17 @@ For detailed categorization, patterns, and architecture analysis, see:
 
 - All cards follow consistent spacing and typography rules
 - Standard cards are ideal for component libraries
-- Wrapper cards provide flexibility for complex content needs
+- Container cards provide flexibility for complex content needs
 - Design tokens ensure visual consistency across all cards
 
 ## 🤝 Contributing
 
 When adding new cards:
-1. Identify if it's a Standard or Wrapper card
+1. Identify if it's a Standard or Container card
 2. Follow established design tokens
 3. Use consistent spacing and typography
 4. Document in CARD_CATEGORIZATION.md
-5. Add to demo.html with appropriate filters
+5. Add to z-demo.html with appropriate filters
 
 ---
 
