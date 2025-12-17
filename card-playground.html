@@ -371,6 +371,11 @@
         --card-border-color: #e6e6e6;
       }
 
+      .unified-card.border-none {
+        --card-border-width: 0;
+        border: none;
+      }
+
       /* Border radius variants */
       .unified-card.radius-4 {
         --card-border-radius: 4px;
@@ -505,6 +510,12 @@
                 <option value="4">4px</option>
                 <option value="8">8px</option>
               </select>
+            </div>
+            <div class="control-item">
+              <div class="control-toggle">
+                <div class="toggle-switch active" id="showBorder"></div>
+                <label class="control-label" for="showBorder">Show Border</label>
+              </div>
             </div>
           </div>
 
@@ -642,6 +653,7 @@
       const showSubtitleToggle = initToggle('showSubtitle', true);
       const showIconToggle = initToggle('showIcon', true);
       const showBodyToggle = initToggle('showBody', true);
+      const showBorderToggle = initToggle('showBorder', true);
 
       // Background Control
       document.getElementById('bgVariant').addEventListener('change', (e) => {
@@ -715,6 +727,13 @@
         
         // Body visibility
         cardBody.style.display = showBodyToggle.classList.contains('active') ? 'block' : 'none';
+
+        // Border visibility
+        if (showBorderToggle.classList.contains('active')) {
+          card.classList.remove('border-none');
+        } else {
+          card.classList.add('border-none');
+        }
       }
 
       // Initial update
@@ -724,6 +743,7 @@
       showSubtitleToggle.addEventListener('click', updateCard);
       showIconToggle.addEventListener('click', updateCard);
       showBodyToggle.addEventListener('click', updateCard);
+      showBorderToggle.addEventListener('click', updateCard);
     </script>
   </body>
 </html>
